@@ -35,6 +35,11 @@ public ModelAndView formTest(@RequestParam("firstname") String fname, @RequestPa
 return new ModelAndView("formPage", "userData", sayHello);
 //	return new ModelAndView("formPage", "userData", p);
 }
+
+@RequestMapping("birthdate")
+public ModelAndView bDay(@RequestParam("date") String date ) {
+	return new ModelAndView("formPage", "userData", date);	
+}
 @RequestMapping("checkboxEx")
 public ModelAndView checkBox(@RequestParam("vehicle") String car) {
 //	String[] cars = car.split(",");
@@ -48,8 +53,8 @@ public ModelAndView dropEx(@RequestParam("carSelection") String car) {
 }
 
 @RequestMapping("radioOption")
-public ModelAndView radioEx(@RequestParam("gender") String gender ) {
-	return new ModelAndView("formPage", "userData", gender);	
+public ModelAndView radioEx(@RequestParam("gcItem") String item ) {
+	return new ModelAndView("formPage", "userData", item);	
 }
 
 @RequestMapping("listpeople")
