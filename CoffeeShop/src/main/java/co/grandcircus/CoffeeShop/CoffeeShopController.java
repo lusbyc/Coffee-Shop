@@ -94,11 +94,11 @@ public class CoffeeShopController {
 		return new ModelAndView("loopEx", "peeplist", peeps);
 	}
 	
-	@RequestMapping("/customers")
-	public ModelAndView listCustomers() {
-		ModelAndView mv = new ModelAndView("list-customers");
-		mv.addObject("users", dao.findAllUsers());
-		return mv;
-	}
+//	@RequestMapping("/customers")
+//	public ModelAndView listCustomers() {
+//		ModelAndView mv = new ModelAndView("list-customers");
+//		mv.addObject("users", dao.findAllUsers());
+//		return mv;
+//	}
 
 }

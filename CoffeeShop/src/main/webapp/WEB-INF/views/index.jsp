@@ -17,8 +17,7 @@
  -->
 
 </head>
-<body>
-	<div class="container">
+<body>	<div class="container">
 
 		${firstPage} <br> <a href="/register" class="btn btn-primary">Register
 			</button> <br> <a href="/menu" class="btn btn-secondary">Menu</a> <br>
@@ -26,6 +25,7 @@
 
 			<p>
 				Browse our merchandise 
+				<br>
 				<img alt="test" src="${coffeeMug}"width="250px"> 
 				<img alt="test" src="${tumbler}" width="250px">
 				<img alt="test" src="${teaTin}" width="250px"> 
