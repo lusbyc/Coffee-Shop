@@ -10,6 +10,8 @@
 <link rel="stylesheet"
 	href=https://stackpath.bootstrapcdn.com/bootswatch/4.1.3/superhero/bootstrap.min.css>
 <link rel="stylesheet" href="main.css">
+
+
 </head>
 <body>
 
@@ -21,7 +23,7 @@
 		<thead>
 		</thead>
 		<tbody>
-			<form action="formresults" onsubmit="return validateInfo();">
+			<form action="/newcustomer" method="post">
 				<tr>
 					<td>First Name:</td>
 					<td><input id="firstname" type="text" name="firstname"></td>
@@ -42,14 +44,14 @@
 			</tr>
 			<tr>
 				<td>Phone Number:</td>
-				<td><input id="phonenumber" type="tel"
-					phonenumber" placeholder="313-555-1212"></td>
+				<td><input id="phonenumber" type="text"
+					phonenumber" placeholder="313-123-4567"></td>
 			</tr>
 			<!-- <form action="/action_page.php">  -->
 			<tr>
 				<td>Birthday:</td>
 				<td><input type="date" name="bday"></td>
-			<tr><td><input type="submit" value="Register"></td>
+			<tr><td><input class="btn btn-primary" type="submit" value="Register"></td>
 			</tr>
 		</tbody>
 	</table>

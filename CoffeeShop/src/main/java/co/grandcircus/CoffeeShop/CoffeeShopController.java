@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.jdbcdemo.JDBCDemo.Person;
 
 @Controller
 public class CoffeeShopController {
@@ -94,11 +97,21 @@ public class CoffeeShopController {
 		return new ModelAndView("loopEx", "peeplist", peeps);
 	}
 	
-//	@RequestMapping("/customers")
-//	public ModelAndView listCustomers() {
-//		ModelAndView mv = new ModelAndView("list-customers");
-//		mv.addObject("users", dao.findAllUsers());
-//		return mv;
+	@RequestMapping("/customers")
+	public ModelAndView listCustomers() {
+		ModelAndView mv = new ModelAndView("list-customers");
+		mv.addObject("users", dao.findAllUsers());
+		return mv;
+	}
+//	@PostMapping(value = "newcustomer")
+//	public ModelAndView newCustomers(@RequestParam("customerId") String test, Person newPerson) {
+//		dao.addCustomer(test,newPerson.getFirstName(), newPerson.getLastName(), newPerson.getEmail(), newPerson.getPassword(), newPerson.getPhone(), newPerson.getBirthday());
+//		return new ModelAndView("redirect:/customers");
 //	}
-
+	
+	public ModelAndView addNewPerson(@RequestParam("pfirstname") String firstName, @RequestParam("plastname")String lastName, @RequestParam("pemail") String email, @RequestParam("ppassword") String password, @RequestParam("pphone") String phone, @RequestParam("pbirthday") String birthday) {
+		Person p1 = new Person(firstName, lastName, email, password, phone, birthday);
+		p.save(p1);
+		return new ModelAndView("redirect:/");
+	}
 }
